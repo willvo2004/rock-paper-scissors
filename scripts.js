@@ -1,6 +1,6 @@
 function getComputerChoice() {
     const arr = ["rock", "paper", "scissors"];
-    return arr[Math.floor(Math.random() * 3) + 1];
+    return arr[Math.floor(Math.random() * 3)];
 }
 
 function playRound(playerSelection, computerSelection) {
@@ -9,16 +9,19 @@ function playRound(playerSelection, computerSelection) {
     const computerWin = !playerWin && !tie;
     
     if (playerWin) {
-        return "You Win! " + playerSelection + "beats "  + computerSelection;
+        return "You Win! " + playerSelection + " beats "  + computerSelection;
     }
     else if (computerWin) {
-        return "You Lose! "  + playerSelection + "beats " + computerSelection;
+        return "You Lose! "  + playerSelection + " beats " + computerSelection;
     }
     else {
         return "Tie!";
     }
 }
 
-const mychoice = "rock";
-const computerchoice = computerSelection();
-console.log(playRound(mychoice, computerchoice));
+function game() {
+    for (let i = 0; i < 5; i++) {
+        let choice = prompt("Choose: rock, paper, or scissors");
+        console.log(playRound(choice.toLowerCase(), getComputerChoice()));
+    }
+}
