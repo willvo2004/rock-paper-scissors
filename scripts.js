@@ -12,7 +12,7 @@ function playRound(playerSelection, computerSelection) {
         return "You Win! " + playerSelection + " beats "  + computerSelection;
     }
     else if (computerWin) {
-        return "You Lose! "  + playerSelection + " beats " + computerSelection;
+        return "You Lose! "  + computerSelection + " beats " + playerSelection;
     }
     else {
         return "Tie!";
@@ -25,3 +25,5 @@ function game() {
         console.log(playRound(choice.toLowerCase(), getComputerChoice()));
     }
 }
+
+game();
