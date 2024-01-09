@@ -18,6 +18,11 @@ body {
     font-size: 24px;
 }
 
+.human-score, .computer-score {
+    display: flex;
+    gap: 1rem;
+}
+
 .button-container {
     padding: 20px;
     display: flex;
@@ -39,4 +44,9 @@ button:hover {
 
 h1 {
     text-align: center;
+}
+
+img {
+    width: 10%;
+    height: 10%;
 }
