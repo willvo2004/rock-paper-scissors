@@ -1,6 +1,20 @@
+const playerSide = document.querySelector("#human-side");
+const cpuSide = document.querySelector("#computer-side");
+
 function getComputerChoice() {
     const arr = ["rock", "paper", "scissors"];
-    return arr[Math.floor(Math.random() * 3)];
+    const option = arr[Math.floor(Math.random() * 3)];
+    switch (option) {
+        case "rock":
+            cpuSide.setAttribute("src", "images/rock.png");
+            break;
+        case "paper":
+            cpuSide.setAttribute("src", "images/paper.png");
+            break;
+        case "scissors":
+            cpuSide.setAttribute("src", "images/scissors.png");
+    }
+    return option;
 }
 
 let playerCount = 0;
@@ -38,16 +52,19 @@ const header = document.querySelector("h1");
 
 rock.addEventListener("click", () => {
     const result = playRound("rock", getComputerChoice());
+    playerSide.setAttribute("src", "images/rock.png");
     header.textContent = result;
 });
 
 paper.addEventListener("click", () => {
     const result = playRound("paper", getComputerChoice());
+    playerSide.setAttribute("src", "images/paper.png");
     header.textContent = result;
 });
 
 scissors.addEventListener("click", () => {
     const result = playRound("scissors", getComputerChoice());
+    playerSide.setAttribute("src", "images/scissors.png");
     header.textContent = result;
 });
 
